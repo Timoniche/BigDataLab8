@@ -1,1 +1,1 @@
-kubectl delete SparkApplication kmeans-spark
+kubectl delete SparkApplication spark-pi

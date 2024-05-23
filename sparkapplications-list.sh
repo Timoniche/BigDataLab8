@@ -1,0 +1,1 @@
+kubectl get sparkapplications.sparkoperator.k8s.io
