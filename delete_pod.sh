@@ -1,0 +1,1 @@
+kubectl delete pod kmeans-lab5-driver -n spark-operator --now
