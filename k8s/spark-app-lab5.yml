@@ -3,8 +3,7 @@ apiVersion: "sparkoperator.k8s.io/v1beta2"
 kind: SparkApplication
 metadata:
   name: kmeans-lab5
-#  namespace: default
-  namespace: spark-operator
+  namespace: default
 spec:
   type: Python
   pythonVersion: "3"
