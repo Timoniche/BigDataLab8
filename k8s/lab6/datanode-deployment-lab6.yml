@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: datanode
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: datanode
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: datanode
+    spec:
+      containers:
+      - name: datanode
+        image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+        ports:
+        - containerPort: 9864
+        envFrom:
+          - secretRef:
+#              kubectl create secret generic hadoop-secrets --from-env-file=hadoop.env
+              name: hadoop-secrets
+        env:
+          - name: CLUSTER_NAME
+            value: datanode_cluster
+          - name: SERVICE_PRECONDITION
+            value: "namenode:9870"
