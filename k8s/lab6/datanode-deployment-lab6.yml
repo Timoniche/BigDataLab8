@@ -14,19 +14,18 @@ spec:
       labels:
         app: datanode
     spec:
-#      todo: remove hostname property if needed
       hostname: datanode
       containers:
-      - name: datanode
-        image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
-        ports:
-        - containerPort: 9864
-        envFrom:
-          - secretRef:
-#              kubectl create secret generic hadoop-secrets --from-env-file=hadoop.env
-              name: hadoop-secrets
-        env:
-          - name: CLUSTER_NAME
-            value: datanode_cluster
-          - name: SERVICE_PRECONDITION
-            value: "namenode:9870"
+        - name: datanode
+          image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+          ports:
+            - containerPort: 9864
+          envFrom:
+            - secretRef:
+                # kubectl create secret generic hadoop-secrets --from-env-file=hadoop.env
+                name: hadoop-secrets
+          env:
+            - name: CLUSTER_NAME
+              value: datanode_cluster
+            - name: SERVICE_PRECONDITION
+              value: "namenode:9870"
