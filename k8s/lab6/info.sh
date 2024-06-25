@@ -1,0 +1,4 @@
+kubectl get sparkapplications
+kubectl get pods
+kubectl get persistentvolumeclaims
+kubectl get persistentvolumes
