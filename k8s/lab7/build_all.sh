@@ -1,3 +1,8 @@
+kubectl apply -f namenode-pv-lab7.yml
+kubectl apply -f namenode-pv-claim-lab7.yml
+kubectl apply -f datanode-pv-lab7.yml
+kubectl apply -f datanode-pv-claim-lab7.yml
+
 kubectl apply -f namenode-service-lab7.yml
 kubectl apply -f namenode-deployment-lab7.yml
 
