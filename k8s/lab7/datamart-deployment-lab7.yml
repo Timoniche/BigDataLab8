@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: datamart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: datamart
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: datamart
+    spec:
+      containers:
+        - name: datamart
+          image: ddulaev/datamart:latest
+          ports:
+            - containerPort: 9001
+          env:
+            - name: CLUSTER_NAME
+              value: datamart_cluster
