@@ -29,3 +29,10 @@ spec:
               value: datanode_cluster
             - name: SERVICE_PRECONDITION
               value: "namenode:9870"
+          volumeMounts:
+            - name: datanode-lab6-persistent-storage
+              mountPath: /hadoop/dfs/data
+      volumes:
+        - name: datanode-lab6-persistent-storage
+          persistentVolumeClaim:
+            claimName: datanode-pv-claim-lab6
