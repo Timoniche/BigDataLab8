@@ -1,3 +1,7 @@
+kubectl apply -f namenode-pv-lab6.yml
+kubectl apply -f namenode-pv-claim-lab6.yml
+
+
 kubectl apply -f namenode-service-lab6.yml
 kubectl apply -f namenode-deployment-lab6.yml
 

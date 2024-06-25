@@ -27,3 +27,10 @@ spec:
           env:
             - name: CLUSTER_NAME
               value: namenode_cluster
+          volumeMounts:
+            - name: namenode-lab6-persistent-storage
+              mountPath: /hadoop/dfs/name
+      volumes:
+        - name: namenode-lab6-persistent-storage
+          persistentVolumeClaim:
+            claimName: namenode-pv-claim-lab6
